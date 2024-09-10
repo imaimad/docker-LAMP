@@ -1,0 +1,36 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    volumes:
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+      - .:/var/www/html
+    ports:
+      - 8000:80
+    depends_on:
+      - db
+
+  db:
+    build:
+      context: ./docker/mysql
+      dockerfile: Dockerfile
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+    ports:
+      - 13306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+
+  #phpmyadminも入れたい場合は以下を有効にする
+  phpmyadmin:
+      build:
+        context: ./docker/phpmyadmin
+        dockerfile: Dockerfile
+      environment:
+        PMA_HOST: 'db'
+        PMA_USER: 'root'
+        PMA_PASSWORD: 'root'
+      ports:
+        - 4000:80
