@@ -24,13 +24,13 @@ services:
       MYSQL_ROOT_PASSWORD: 'root'
 
   #phpmyadminも入れたい場合は以下を有効にする
-  phpmyadmin:
-      build:
-        context: ./docker/phpmyadmin
-        dockerfile: Dockerfile
-      environment:
-        PMA_HOST: 'db'
-        PMA_USER: 'root'
-        PMA_PASSWORD: 'root'
-      ports:
-        - 4000:80
+  # phpmyadmin:
+  #     build:
+  #       context: ./docker/phpmyadmin
+  #       dockerfile: Dockerfile
+  #     environment:
+  #       PMA_HOST: 'db'
+  #       PMA_USER: 'root'
+  #       PMA_PASSWORD: 'root'
+  #     ports:
+  #       - 4000:80
