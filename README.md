@@ -12,7 +12,7 @@ XAMMP等で古いバージョンのphpをダウンロードしたりするのは
 5. 【任意】php.iniを編集する必要がある場合は編集する（mbstring,mysql,mysqliは既に有効化済みです）
 6.     $ docker-compose -up -d
     でコンテナを起動
-7.     $ dcoker ps
+7.     $ docker ps
     でコンテナが立ち上がっていることを確認
 8. mysqlコンテナに対してDBの作成を行う。（クライアントソフト推奨）
 9.  DPの洗い替えをする（クライアントソフト推奨）
