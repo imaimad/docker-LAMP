@@ -10,7 +10,7 @@ XAMMP等で古いバージョンのphpをダウンロードしたりするのは
 3. docker/mysql/Dockerfileにインストールしたいmysqlのバージョンを記入
 4. 【任意】phpmyadminも欲しい場合はdocker-compose.ymlのコメントを外す（26~35行）
 5. 【任意】php.iniを編集する必要がある場合は編集する（mbstring,mysql,mysqliは既に有効化済みです）
-6.     $ docker-compose -up -d
+6.     $ docker-compose up -d
     でコンテナを起動
 7.     $ docker ps
     でコンテナが立ち上がっていることを確認
